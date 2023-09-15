@@ -3,7 +3,7 @@ echo Generating parser...
 antlrJar="./lib/antlr.jar"
 antlrMainclass="org.antlr.v4.Tool"
 
-grammarFile="./src/parser/Yapl.g4"
+grammarFile="./src/parser/Ohpl.g4"
 targetPackage="parser"
 targetDir="./src/$targetPackage"
 

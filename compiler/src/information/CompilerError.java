@@ -41,7 +41,7 @@ public class CompilerError extends Information {
   @Override
   public String toString() {
     String programName = (Compiler.programName != null) ? "[" + Compiler.programName + "] " : "";
-    String msg = "YAPL compilation: " + programName + "ERROR " + errorNumber + " (line " + row + ", column " + column + ")";
+    String msg = "Ohpl compilation: " + programName + "ERROR " + errorNumber + " (line " + row + ", column " + column + ")";
 
     if (context != null) msg += "\r\nPath: " + CompilerContext.getPath(context);
     msg += "\r\nMessage: " + message;

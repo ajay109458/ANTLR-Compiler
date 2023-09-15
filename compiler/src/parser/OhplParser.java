@@ -1,20 +1,16 @@
-// Generated from C:/coderepos/compiler/ANTLR-Compiler/compiler/src/parser/Yapl.g4 by ANTLR 4.13.1
+// Generated from C:/coderepos/compiler/ANTLR-Compiler/compiler/src/parser/Ohpl.g4 by ANTLR 4.13.1
 package parser;
-
-import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.atn.ATN;
-import org.antlr.v4.runtime.atn.ATNDeserializer;
-import org.antlr.v4.runtime.atn.ParserATNSimulator;
-import org.antlr.v4.runtime.atn.PredictionContextCache;
+import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
-import org.antlr.v4.runtime.tree.ParseTreeListener;
-import org.antlr.v4.runtime.tree.ParseTreeVisitor;
-import org.antlr.v4.runtime.tree.TerminalNode;
-
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
+import org.antlr.v4.runtime.tree.*;
 import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
-public class YaplParser extends Parser {
+public class OhplParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.13.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -103,7 +99,7 @@ public class YaplParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Yapl.g4"; }
+	public String getGrammarFileName() { return "Ohpl.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -114,21 +110,21 @@ public class YaplParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public YaplParser(TokenStream input) {
+	public OhplParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ProgramContext extends ParserRuleContext {
-		public List<TerminalNode> Id() { return getTokens(YaplParser.Id); }
+		public List<TerminalNode> Id() { return getTokens(OhplParser.Id); }
 		public TerminalNode Id(int i) {
-			return getToken(YaplParser.Id, i);
+			return getToken(OhplParser.Id, i);
 		}
 		public StatementListContext statementList() {
 			return getRuleContext(StatementListContext.class,0);
 		}
-		public TerminalNode EOF() { return getToken(YaplParser.EOF, 0); }
+		public TerminalNode EOF() { return getToken(OhplParser.EOF, 0); }
 		public List<DeclarationBlockContext> declarationBlock() {
 			return getRuleContexts(DeclarationBlockContext.class);
 		}
@@ -147,15 +143,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_program; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterProgram(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterProgram(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitProgram(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitProgram(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitProgram(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitProgram(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -250,15 +246,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_declarationBlock; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterDeclarationBlock(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterDeclarationBlock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitDeclarationBlock(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitDeclarationBlock(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitDeclarationBlock(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitDeclarationBlock(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -323,7 +319,7 @@ public class YaplParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ConstDeclarationContext extends ParserRuleContext {
-		public TerminalNode Id() { return getToken(YaplParser.Id, 0); }
+		public TerminalNode Id() { return getToken(OhplParser.Id, 0); }
 		public LiteralContext literal() {
 			return getRuleContext(LiteralContext.class,0);
 		}
@@ -333,15 +329,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_constDeclaration; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterConstDeclaration(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterConstDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitConstDeclaration(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitConstDeclaration(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitConstDeclaration(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitConstDeclaration(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -380,9 +376,9 @@ public class YaplParser extends Parser {
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
 		}
-		public List<TerminalNode> Id() { return getTokens(YaplParser.Id); }
+		public List<TerminalNode> Id() { return getTokens(OhplParser.Id); }
 		public TerminalNode Id(int i) {
-			return getToken(YaplParser.Id, i);
+			return getToken(OhplParser.Id, i);
 		}
 		public VarDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -390,15 +386,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_varDeclaration; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterVarDeclaration(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterVarDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitVarDeclaration(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitVarDeclaration(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitVarDeclaration(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitVarDeclaration(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -447,7 +443,7 @@ public class YaplParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class RecordDeclarationContext extends ParserRuleContext {
-		public TerminalNode Id() { return getToken(YaplParser.Id, 0); }
+		public TerminalNode Id() { return getToken(OhplParser.Id, 0); }
 		public List<VarDeclarationContext> varDeclaration() {
 			return getRuleContexts(VarDeclarationContext.class);
 		}
@@ -460,15 +456,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_recordDeclaration; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterRecordDeclaration(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterRecordDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitRecordDeclaration(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitRecordDeclaration(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitRecordDeclaration(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitRecordDeclaration(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -520,9 +516,9 @@ public class YaplParser extends Parser {
 		public ReturnTypeContext returnType() {
 			return getRuleContext(ReturnTypeContext.class,0);
 		}
-		public List<TerminalNode> Id() { return getTokens(YaplParser.Id); }
+		public List<TerminalNode> Id() { return getTokens(OhplParser.Id); }
 		public TerminalNode Id(int i) {
-			return getToken(YaplParser.Id, i);
+			return getToken(OhplParser.Id, i);
 		}
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
@@ -539,15 +535,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_procedure; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterProcedure(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterProcedure(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitProcedure(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitProcedure(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitProcedure(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitProcedure(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -619,22 +615,22 @@ public class YaplParser extends Parser {
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
 		}
-		public TerminalNode Id() { return getToken(YaplParser.Id, 0); }
+		public TerminalNode Id() { return getToken(OhplParser.Id, 0); }
 		public ParamContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_param; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterParam(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterParam(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitParam(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitParam(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitParam(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitParam(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -664,7 +660,7 @@ public class YaplParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ProcedureCallContext extends ParserRuleContext {
-		public TerminalNode Id() { return getToken(YaplParser.Id, 0); }
+		public TerminalNode Id() { return getToken(OhplParser.Id, 0); }
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
@@ -677,15 +673,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_procedureCall; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterProcedureCall(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterProcedureCall(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitProcedureCall(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitProcedureCall(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitProcedureCall(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitProcedureCall(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -753,15 +749,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_returnStatement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterReturnStatement(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterReturnStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitReturnStatement(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitReturnStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitReturnStatement(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitReturnStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -812,15 +808,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_block; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterBlock(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterBlock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitBlock(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitBlock(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitBlock(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitBlock(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -890,15 +886,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterStatement(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitStatement(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitStatement(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -984,15 +980,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_statementList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterStatementList(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterStatementList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitStatementList(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitStatementList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitStatementList(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitStatementList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1046,15 +1042,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assignment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterAssignment(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterAssignment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitAssignment(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitAssignment(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitAssignment(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitAssignment(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1102,15 +1098,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ifStatement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterIfStatement(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterIfStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitIfStatement(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitIfStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitIfStatement(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitIfStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1171,15 +1167,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_whileStatement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterWhileStatement(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterWhileStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitWhileStatement(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitWhileStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitWhileStatement(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitWhileStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1215,22 +1211,22 @@ public class YaplParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class WriteStatementContext extends ParserRuleContext {
-		public TerminalNode String() { return getToken(YaplParser.String, 0); }
+		public TerminalNode String() { return getToken(OhplParser.String, 0); }
 		public WriteStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_writeStatement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterWriteStatement(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterWriteStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitWriteStatement(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitWriteStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitWriteStatement(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitWriteStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1279,23 +1275,23 @@ public class YaplParser extends Parser {
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public TerminalNode MUL() { return getToken(YaplParser.MUL, 0); }
-		public TerminalNode DIV() { return getToken(YaplParser.DIV, 0); }
-		public TerminalNode MOD() { return getToken(YaplParser.MOD, 0); }
-		public TerminalNode ADD() { return getToken(YaplParser.ADD, 0); }
-		public TerminalNode SUB() { return getToken(YaplParser.SUB, 0); }
+		public TerminalNode MUL() { return getToken(OhplParser.MUL, 0); }
+		public TerminalNode DIV() { return getToken(OhplParser.DIV, 0); }
+		public TerminalNode MOD() { return getToken(OhplParser.MOD, 0); }
+		public TerminalNode ADD() { return getToken(OhplParser.ADD, 0); }
+		public TerminalNode SUB() { return getToken(OhplParser.SUB, 0); }
 		public ArithmeticExprContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterArithmeticExpr(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterArithmeticExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitArithmeticExpr(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitArithmeticExpr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitArithmeticExpr(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitArithmeticExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1308,22 +1304,22 @@ public class YaplParser extends Parser {
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public TerminalNode LT() { return getToken(YaplParser.LT, 0); }
-		public TerminalNode LE() { return getToken(YaplParser.LE, 0); }
-		public TerminalNode GT() { return getToken(YaplParser.GT, 0); }
-		public TerminalNode GE() { return getToken(YaplParser.GE, 0); }
+		public TerminalNode LT() { return getToken(OhplParser.LT, 0); }
+		public TerminalNode LE() { return getToken(OhplParser.LE, 0); }
+		public TerminalNode GT() { return getToken(OhplParser.GT, 0); }
+		public TerminalNode GE() { return getToken(OhplParser.GE, 0); }
 		public ComparisonContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterComparison(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterComparison(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitComparison(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitComparison(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitComparison(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitComparison(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1341,15 +1337,15 @@ public class YaplParser extends Parser {
 		public CreationExprContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterCreationExpr(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterCreationExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitCreationExpr(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitCreationExpr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitCreationExpr(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitCreationExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1359,20 +1355,20 @@ public class YaplParser extends Parser {
 		public PrimaryExprContext primaryExpr() {
 			return getRuleContext(PrimaryExprContext.class,0);
 		}
-		public TerminalNode ADD() { return getToken(YaplParser.ADD, 0); }
-		public TerminalNode SUB() { return getToken(YaplParser.SUB, 0); }
+		public TerminalNode ADD() { return getToken(OhplParser.ADD, 0); }
+		public TerminalNode SUB() { return getToken(OhplParser.SUB, 0); }
 		public UnaryExprContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterUnaryExpr(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterUnaryExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitUnaryExpr(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitUnaryExpr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitUnaryExpr(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitUnaryExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1385,20 +1381,20 @@ public class YaplParser extends Parser {
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public TerminalNode EQ() { return getToken(YaplParser.EQ, 0); }
-		public TerminalNode NE() { return getToken(YaplParser.NE, 0); }
+		public TerminalNode EQ() { return getToken(OhplParser.EQ, 0); }
+		public TerminalNode NE() { return getToken(OhplParser.NE, 0); }
 		public EqualityComparisonContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterEqualityComparison(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterEqualityComparison(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitEqualityComparison(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitEqualityComparison(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitEqualityComparison(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitEqualityComparison(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1411,20 +1407,20 @@ public class YaplParser extends Parser {
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public TerminalNode AND() { return getToken(YaplParser.AND, 0); }
-		public TerminalNode OR() { return getToken(YaplParser.OR, 0); }
+		public TerminalNode AND() { return getToken(OhplParser.AND, 0); }
+		public TerminalNode OR() { return getToken(OhplParser.OR, 0); }
 		public BooleanExprContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterBooleanExpr(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterBooleanExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitBooleanExpr(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitBooleanExpr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitBooleanExpr(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitBooleanExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1680,15 +1676,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_primaryExpr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterPrimaryExpr(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterPrimaryExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitPrimaryExpr(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitPrimaryExpr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitPrimaryExpr(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitPrimaryExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1763,15 +1759,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_arrayLength; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterArrayLength(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterArrayLength(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitArrayLength(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitArrayLength(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitArrayLength(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitArrayLength(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1801,7 +1797,7 @@ public class YaplParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class FullIdentifierContext extends ParserRuleContext {
-		public TerminalNode Id() { return getToken(YaplParser.Id, 0); }
+		public TerminalNode Id() { return getToken(OhplParser.Id, 0); }
 		public SelectorContext selector() {
 			return getRuleContext(SelectorContext.class,0);
 		}
@@ -1811,15 +1807,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_fullIdentifier; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterFullIdentifier(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterFullIdentifier(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitFullIdentifier(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitFullIdentifier(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitFullIdentifier(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitFullIdentifier(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1860,7 +1856,7 @@ public class YaplParser extends Parser {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode Id() { return getToken(YaplParser.Id, 0); }
+		public TerminalNode Id() { return getToken(OhplParser.Id, 0); }
 		public SelectorContext selector() {
 			return getRuleContext(SelectorContext.class,0);
 		}
@@ -1870,15 +1866,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_selector; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterSelector(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterSelector(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitSelector(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitSelector(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitSelector(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitSelector(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1947,15 +1943,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_returnType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterReturnType(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterReturnType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitReturnType(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitReturnType(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitReturnType(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitReturnType(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2009,15 +2005,15 @@ public class YaplParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_type; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterType(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitType(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitType(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitType(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitType(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2062,22 +2058,22 @@ public class YaplParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class BaseTypeContext extends ParserRuleContext {
-		public TerminalNode Id() { return getToken(YaplParser.Id, 0); }
+		public TerminalNode Id() { return getToken(OhplParser.Id, 0); }
 		public BaseTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_baseType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterBaseType(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterBaseType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitBaseType(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitBaseType(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitBaseType(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitBaseType(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2114,23 +2110,23 @@ public class YaplParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class LiteralContext extends ParserRuleContext {
-		public TerminalNode Boolean() { return getToken(YaplParser.Boolean, 0); }
-		public TerminalNode Number() { return getToken(YaplParser.Number, 0); }
+		public TerminalNode Boolean() { return getToken(OhplParser.Boolean, 0); }
+		public TerminalNode Number() { return getToken(OhplParser.Number, 0); }
 		public LiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_literal; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).enterLiteral(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).enterLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof YaplListener ) ((YaplListener)listener).exitLiteral(this);
+			if ( listener instanceof OhplListener ) ((OhplListener)listener).exitLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof YaplVisitor ) return ((YaplVisitor<? extends T>)visitor).visitLiteral(this);
+			if ( visitor instanceof OhplVisitor ) return ((OhplVisitor<? extends T>)visitor).visitLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}

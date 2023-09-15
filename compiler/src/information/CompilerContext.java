@@ -3,7 +3,7 @@ package information;
 import compiler.Compiler;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
-import parser.YaplParser.*;
+import parser.OhplParser.*;
 
 
 public class CompilerContext {

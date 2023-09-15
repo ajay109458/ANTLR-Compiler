@@ -12,7 +12,7 @@ public class Expression extends Variable {
   }
 
   public static String nameOf(ParserRuleContext context) {
-    return (context == null) ? YaplConstants.UNDEFINED : String.format("<%d>", context.hashCode());
+    return (context == null) ? OhplConstants.UNDEFINED : String.format("<%d>", context.hashCode());
   }
 
 }

@@ -1,6 +1,6 @@
 package stdlib;
 
-import information.YaplConstants;
+import information.OhplConstants;
 import jvm_class_generator.specs.JvmClass;
 import jvm_class_generator.specs.attributes.Code;
 import jvm_class_generator.specs.class_content.Method;
@@ -26,10 +26,10 @@ public class DefaultJvmStandardLibrary implements StandardLibrary {
 
   public Symbol[] getPredefinedSymbols() {
     Symbol[] symbols = new Symbol[4];
-    symbols[0] = new Procedure("writeint", YaplConstants.VOID, List.of(new Parameter("i", YaplConstants.INT)), true, false);
-    symbols[1] = new Procedure("writebool", YaplConstants.VOID, List.of(new Parameter("b", YaplConstants.BOOL)), true, false);
-    symbols[2] = new Procedure("writeln", YaplConstants.VOID, List.of(), true, false);
-    symbols[3] = new Procedure("readint", YaplConstants.INT, List.of(), true, false);
+    symbols[0] = new Procedure("writeint", OhplConstants.VOID, List.of(new Parameter("i", OhplConstants.INT)), true, false);
+    symbols[1] = new Procedure("writebool", OhplConstants.VOID, List.of(new Parameter("b", OhplConstants.BOOL)), true, false);
+    symbols[2] = new Procedure("writeln", OhplConstants.VOID, List.of(), true, false);
+    symbols[3] = new Procedure("readint", OhplConstants.INT, List.of(), true, false);
     return symbols;
   }
 

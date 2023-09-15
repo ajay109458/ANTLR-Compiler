@@ -1,4 +1,4 @@
-// Generated from C:/coderepos/compiler/ANTLR-Compiler/compiler/src/parser/Yapl.g4 by ANTLR 4.13.1
+// Generated from C:/coderepos/compiler/ANTLR-Compiler/compiler/src/parser/Ohpl.g4 by ANTLR 4.13.1
 package parser;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -6,372 +6,372 @@ import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
- * This class provides an empty implementation of {@link YaplListener},
+ * This class provides an empty implementation of {@link OhplListener},
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
 @SuppressWarnings("CheckReturnValue")
-public class YaplBaseListener implements YaplListener {
+public class OhplBaseListener implements OhplListener {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProgram(YaplParser.ProgramContext ctx) { }
+	@Override public void enterProgram(OhplParser.ProgramContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProgram(YaplParser.ProgramContext ctx) { }
+	@Override public void exitProgram(OhplParser.ProgramContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDeclarationBlock(YaplParser.DeclarationBlockContext ctx) { }
+	@Override public void enterDeclarationBlock(OhplParser.DeclarationBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDeclarationBlock(YaplParser.DeclarationBlockContext ctx) { }
+	@Override public void exitDeclarationBlock(OhplParser.DeclarationBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConstDeclaration(YaplParser.ConstDeclarationContext ctx) { }
+	@Override public void enterConstDeclaration(OhplParser.ConstDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConstDeclaration(YaplParser.ConstDeclarationContext ctx) { }
+	@Override public void exitConstDeclaration(OhplParser.ConstDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVarDeclaration(YaplParser.VarDeclarationContext ctx) { }
+	@Override public void enterVarDeclaration(OhplParser.VarDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVarDeclaration(YaplParser.VarDeclarationContext ctx) { }
+	@Override public void exitVarDeclaration(OhplParser.VarDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRecordDeclaration(YaplParser.RecordDeclarationContext ctx) { }
+	@Override public void enterRecordDeclaration(OhplParser.RecordDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRecordDeclaration(YaplParser.RecordDeclarationContext ctx) { }
+	@Override public void exitRecordDeclaration(OhplParser.RecordDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProcedure(YaplParser.ProcedureContext ctx) { }
+	@Override public void enterProcedure(OhplParser.ProcedureContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProcedure(YaplParser.ProcedureContext ctx) { }
+	@Override public void exitProcedure(OhplParser.ProcedureContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParam(YaplParser.ParamContext ctx) { }
+	@Override public void enterParam(OhplParser.ParamContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParam(YaplParser.ParamContext ctx) { }
+	@Override public void exitParam(OhplParser.ParamContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProcedureCall(YaplParser.ProcedureCallContext ctx) { }
+	@Override public void enterProcedureCall(OhplParser.ProcedureCallContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProcedureCall(YaplParser.ProcedureCallContext ctx) { }
+	@Override public void exitProcedureCall(OhplParser.ProcedureCallContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterReturnStatement(YaplParser.ReturnStatementContext ctx) { }
+	@Override public void enterReturnStatement(OhplParser.ReturnStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitReturnStatement(YaplParser.ReturnStatementContext ctx) { }
+	@Override public void exitReturnStatement(OhplParser.ReturnStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlock(YaplParser.BlockContext ctx) { }
+	@Override public void enterBlock(OhplParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBlock(YaplParser.BlockContext ctx) { }
+	@Override public void exitBlock(OhplParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatement(YaplParser.StatementContext ctx) { }
+	@Override public void enterStatement(OhplParser.StatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatement(YaplParser.StatementContext ctx) { }
+	@Override public void exitStatement(OhplParser.StatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatementList(YaplParser.StatementListContext ctx) { }
+	@Override public void enterStatementList(OhplParser.StatementListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatementList(YaplParser.StatementListContext ctx) { }
+	@Override public void exitStatementList(OhplParser.StatementListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssignment(YaplParser.AssignmentContext ctx) { }
+	@Override public void enterAssignment(OhplParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssignment(YaplParser.AssignmentContext ctx) { }
+	@Override public void exitAssignment(OhplParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIfStatement(YaplParser.IfStatementContext ctx) { }
+	@Override public void enterIfStatement(OhplParser.IfStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIfStatement(YaplParser.IfStatementContext ctx) { }
+	@Override public void exitIfStatement(OhplParser.IfStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWhileStatement(YaplParser.WhileStatementContext ctx) { }
+	@Override public void enterWhileStatement(OhplParser.WhileStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWhileStatement(YaplParser.WhileStatementContext ctx) { }
+	@Override public void exitWhileStatement(OhplParser.WhileStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWriteStatement(YaplParser.WriteStatementContext ctx) { }
+	@Override public void enterWriteStatement(OhplParser.WriteStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWriteStatement(YaplParser.WriteStatementContext ctx) { }
+	@Override public void exitWriteStatement(OhplParser.WriteStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArithmeticExpr(YaplParser.ArithmeticExprContext ctx) { }
+	@Override public void enterArithmeticExpr(OhplParser.ArithmeticExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArithmeticExpr(YaplParser.ArithmeticExprContext ctx) { }
+	@Override public void exitArithmeticExpr(OhplParser.ArithmeticExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparison(YaplParser.ComparisonContext ctx) { }
+	@Override public void enterComparison(OhplParser.ComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparison(YaplParser.ComparisonContext ctx) { }
+	@Override public void exitComparison(OhplParser.ComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCreationExpr(YaplParser.CreationExprContext ctx) { }
+	@Override public void enterCreationExpr(OhplParser.CreationExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCreationExpr(YaplParser.CreationExprContext ctx) { }
+	@Override public void exitCreationExpr(OhplParser.CreationExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterUnaryExpr(YaplParser.UnaryExprContext ctx) { }
+	@Override public void enterUnaryExpr(OhplParser.UnaryExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitUnaryExpr(YaplParser.UnaryExprContext ctx) { }
+	@Override public void exitUnaryExpr(OhplParser.UnaryExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEqualityComparison(YaplParser.EqualityComparisonContext ctx) { }
+	@Override public void enterEqualityComparison(OhplParser.EqualityComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEqualityComparison(YaplParser.EqualityComparisonContext ctx) { }
+	@Override public void exitEqualityComparison(OhplParser.EqualityComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBooleanExpr(YaplParser.BooleanExprContext ctx) { }
+	@Override public void enterBooleanExpr(OhplParser.BooleanExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBooleanExpr(YaplParser.BooleanExprContext ctx) { }
+	@Override public void exitBooleanExpr(OhplParser.BooleanExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimaryExpr(YaplParser.PrimaryExprContext ctx) { }
+	@Override public void enterPrimaryExpr(OhplParser.PrimaryExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimaryExpr(YaplParser.PrimaryExprContext ctx) { }
+	@Override public void exitPrimaryExpr(OhplParser.PrimaryExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArrayLength(YaplParser.ArrayLengthContext ctx) { }
+	@Override public void enterArrayLength(OhplParser.ArrayLengthContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArrayLength(YaplParser.ArrayLengthContext ctx) { }
+	@Override public void exitArrayLength(OhplParser.ArrayLengthContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFullIdentifier(YaplParser.FullIdentifierContext ctx) { }
+	@Override public void enterFullIdentifier(OhplParser.FullIdentifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFullIdentifier(YaplParser.FullIdentifierContext ctx) { }
+	@Override public void exitFullIdentifier(OhplParser.FullIdentifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSelector(YaplParser.SelectorContext ctx) { }
+	@Override public void enterSelector(OhplParser.SelectorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSelector(YaplParser.SelectorContext ctx) { }
+	@Override public void exitSelector(OhplParser.SelectorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterReturnType(YaplParser.ReturnTypeContext ctx) { }
+	@Override public void enterReturnType(OhplParser.ReturnTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitReturnType(YaplParser.ReturnTypeContext ctx) { }
+	@Override public void exitReturnType(OhplParser.ReturnTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterType(YaplParser.TypeContext ctx) { }
+	@Override public void enterType(OhplParser.TypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitType(YaplParser.TypeContext ctx) { }
+	@Override public void exitType(OhplParser.TypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBaseType(YaplParser.BaseTypeContext ctx) { }
+	@Override public void enterBaseType(OhplParser.BaseTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBaseType(YaplParser.BaseTypeContext ctx) { }
+	@Override public void exitBaseType(OhplParser.BaseTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLiteral(YaplParser.LiteralContext ctx) { }
+	@Override public void enterLiteral(OhplParser.LiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLiteral(YaplParser.LiteralContext ctx) { }
+	@Override public void exitLiteral(OhplParser.LiteralContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

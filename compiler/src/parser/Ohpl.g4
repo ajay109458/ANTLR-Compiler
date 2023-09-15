@@ -1,4 +1,4 @@
-grammar Yapl;
+grammar Ohpl;
 
 program: 'Program' Id (declarationBlock | procedure)* 'Begin' statementList 'End' Id '.' EOF;
 

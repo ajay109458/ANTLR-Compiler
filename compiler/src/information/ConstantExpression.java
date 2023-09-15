@@ -17,12 +17,12 @@ public class ConstantExpression extends Constant {
   }
 
   public static String nameOf(ParserRuleContext context) {
-    return (context == null) ? YaplConstants.UNDEFINED : String.format("<%d>", context.hashCode());
+    return (context == null) ? OhplConstants.UNDEFINED : String.format("<%d>", context.hashCode());
   }
 
   @Override
   public String toString() {
-    String text = (context == null) ? YaplConstants.UNDEFINED : CompilerContext.getText(context);
+    String text = (context == null) ? OhplConstants.UNDEFINED : CompilerContext.getText(context);
     String pos = (context == null) ? "" : " // line: " + CompilerContext.getLine(context) + ", column: " + CompilerContext.getColumn(context);
     return symbolType.toUpperCase() + " " + dataType + " " + text + " = " + value + pos;
   }

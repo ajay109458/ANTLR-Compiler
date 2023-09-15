@@ -9,7 +9,7 @@ testFolder('typecheck');
 testFolder('codegen', true);
 
 function testFolder(folder, doRun = false) {
-  fs.readdirSync(`./testfiles/${folder}`).filter(f => f.endsWith('.yapl')).map(f => `${folder}/${f.replace('.yapl', '')}`).forEach(f => test(f, doRun));
+  fs.readdirSync(`./testfiles/${folder}`).filter(f => f.endsWith('.Ohpl')).map(f => `${folder}/${f.replace('.Ohpl', '')}`).forEach(f => test(f, doRun));
 }
 
 function test(testfile, doRun = false) {
@@ -28,7 +28,7 @@ function test(testfile, doRun = false) {
 
 function compile(testfile) {
   try {
-    const stdout = system.execSync(`cd ${__dirname} & ./scripts/run.sh ./testfiles/${testfile}.yapl ./output/${testfile}`).toString();
+    const stdout = system.execSync(`cd ${__dirname} & ./scripts/run.sh ./testfiles/${testfile}.Ohpl ./output/${testfile}`).toString();
     console.log(stdout);
   }
   catch (err) {

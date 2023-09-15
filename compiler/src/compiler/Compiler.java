@@ -8,9 +8,9 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import parser.ErrorListener;
-import parser.YaplLexer;
-import parser.YaplParser;
-import parser.YaplParser.ProgramContext;
+import parser.OhplLexer;
+import parser.OhplParser;
+import parser.OhplParser.ProgramContext;
 import stdlib.DefaultJvmStandardLibrary;
 import stdlib.StandardLibrary;
 import analyser.SymbolTable;
@@ -49,16 +49,16 @@ public class Compiler {
     else if (settings.profile) profile(parseTree, symbolTable, stdlib, settings.outputDir);
     else if (settings.compile) compile(parseTree, symbolTable, stdlib, settings.outputDir);
 
-    System.out.println("YAPL compilation: OK");
+    System.out.println("Ohpl compilation: OK");
   }
 
   public static ProgramContext parse(String sourceCode) {
-    YaplLexer lexer = new YaplLexer( CharStreams.fromString(sourceCode) );
+    OhplLexer lexer = new OhplLexer( CharStreams.fromString(sourceCode) );
     lexer.removeErrorListeners();
     lexer.addErrorListener(new ErrorListener());
     CommonTokenStream tokens = new CommonTokenStream(lexer);
 
-    YaplParser parser = new YaplParser(tokens);
+    OhplParser parser = new OhplParser(tokens);
     parser.removeErrorListeners();
     parser.addErrorListener(new ErrorListener());
     ProgramContext parseTree = parser.program();

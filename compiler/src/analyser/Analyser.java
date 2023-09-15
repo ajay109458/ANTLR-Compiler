@@ -1,22 +1,22 @@
 package analyser;
 
 import compiler.Compiler;
-import information.YaplConstants;
+import information.OhplConstants;
 import information.CompilerError;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
-import parser.YaplBaseListener;
-import parser.YaplParser;
-import parser.YaplParser.*;
+import parser.OhplBaseListener;
+import parser.OhplParser;
+import parser.OhplParser.*;
 import information.*;
 import information.Record;
 import stdlib.StandardLibrary;
 
 import java.util.Stack;
 
-public class Analyser extends YaplBaseListener {
+public class Analyser extends OhplBaseListener {
 
   public SymbolTable symboltable = new SymbolTable();
 
@@ -81,7 +81,7 @@ public class Analyser extends YaplBaseListener {
   @Override
   public void exitVarDeclaration(VarDeclarationContext ctx) {
     final Information typeInfo = informationStack.pop();
-    final String type = (typeInfo.is(CompilerError.class)) ? YaplConstants.UNDEFINED : typeInfo.as(Variable.class).dataType;
+    final String type = (typeInfo.is(CompilerError.class)) ? OhplConstants.UNDEFINED : typeInfo.as(Variable.class).dataType;
 
     for (TerminalNode id : ctx.Id()) {
       String name = id.getText();
@@ -137,7 +137,7 @@ public class Analyser extends YaplBaseListener {
   public void afterProcedureId(ProcedureContext ctx) {
     final String procedureName = ctx.Id(0).getText();
     final Information typeInfo = informationStack.pop();
-    final String type = (typeInfo.is(CompilerError.class)) ? YaplConstants.UNDEFINED : typeInfo.as(Variable.class).dataType;
+    final String type = (typeInfo.is(CompilerError.class)) ? OhplConstants.UNDEFINED : typeInfo.as(Variable.class).dataType;
     this.isPure = true;
 
     if (symboltable.currScope.contains(procedureName)) {
@@ -161,7 +161,7 @@ public class Analyser extends YaplBaseListener {
     symboltable.closeScope();
     isLocal = false;
 
-    if (!symboltable.get(name).as(Procedure.class).returnType.equals(YaplConstants.VOID) && !hasReturn) {
+    if (!symboltable.get(name).as(Procedure.class).returnType.equals(OhplConstants.VOID) && !hasReturn) {
       Compiler.errors.add(CompilerError.MissingReturn(name, ctx, ctx.block().stop));
     }
 
@@ -227,11 +227,11 @@ public class Analyser extends YaplBaseListener {
       final Procedure procedure = symboltable.get(procedureName).as(Procedure.class);
 
       // function has return type void
-      if (procedure.returnType.equals(YaplConstants.VOID)) {
+      if (procedure.returnType.equals(OhplConstants.VOID)) {
         Compiler.errors.add( CompilerError.IllegalRetValProc(procedureName, ctx.expression(), ctx.expression().start) );
       }
       // return type and expression type do not match
-      else if (!returnSym.dataType.equals(procedure.returnType) && !returnSym.is(CompilerError.class) && !procedure.returnType.equals(YaplConstants.UNDEFINED)) {
+      else if (!returnSym.dataType.equals(procedure.returnType) && !returnSym.is(CompilerError.class) && !procedure.returnType.equals(OhplConstants.UNDEFINED)) {
         Compiler.errors.add(
           (ctx.expression() != null)
             ? CompilerError.InvalidReturnType(procedureName, ctx.expression(), ctx.expression().start)
@@ -240,7 +240,7 @@ public class Analyser extends YaplBaseListener {
       }
     }
     // inside a function, return has no expression, function has a return type other than void
-    else if (ctx.expression() == null && procedureName != null && !symboltable.get(procedureName).as(Procedure.class).returnType.equals(YaplConstants.VOID) && !symboltable.get(procedureName).as(Procedure.class).returnType.equals(YaplConstants.UNDEFINED)) {
+    else if (ctx.expression() == null && procedureName != null && !symboltable.get(procedureName).as(Procedure.class).returnType.equals(OhplConstants.VOID) && !symboltable.get(procedureName).as(Procedure.class).returnType.equals(OhplConstants.UNDEFINED)) {
       Compiler.errors.add(
         (ctx.expression() != null)
         ? CompilerError.InvalidReturnType(procedureName, ctx.expression(), ctx.expression().start)
@@ -258,7 +258,7 @@ public class Analyser extends YaplBaseListener {
   public void exitIfStatement(IfStatementContext ctx) {
     Information condInfo = informationStack.pop();
 
-    if (!condInfo.is(CompilerError.class) && !condInfo.as(Variable.class).dataType.equals(YaplConstants.BOOL)) {
+    if (!condInfo.is(CompilerError.class) && !condInfo.as(Variable.class).dataType.equals(OhplConstants.BOOL)) {
       Compiler.errors.add( CompilerError.CondNotBool(ctx.expression(), ctx.expression().start) );
     }
   }
@@ -267,7 +267,7 @@ public class Analyser extends YaplBaseListener {
   public void exitWhileStatement(WhileStatementContext ctx) {
     Information condInfo = informationStack.pop();
 
-    if (!condInfo.is(CompilerError.class) && !condInfo.as(Variable.class).dataType.equals(YaplConstants.BOOL)) {
+    if (!condInfo.is(CompilerError.class) && !condInfo.as(Variable.class).dataType.equals(OhplConstants.BOOL)) {
       Compiler.errors.add( CompilerError.CondNotBool(ctx.expression(), ctx.expression().start) );
     }
   }
@@ -276,7 +276,7 @@ public class Analyser extends YaplBaseListener {
   public void exitUnaryExpr(UnaryExprContext ctx) {
     final Information expr = informationStack.peek();
 
-    if (ctx.sign != null && !expr.is(CompilerError.class) && !expr.as(Variable.class).dataType.equals(YaplConstants.INT)) {
+    if (ctx.sign != null && !expr.is(CompilerError.class) && !expr.as(Variable.class).dataType.equals(OhplConstants.INT)) {
       final CompilerError error = CompilerError.IllegalOp1Type(ctx.sign.getText(), ctx, ctx.start);
       Compiler.errors.add(error);
       informationStack.pop();
@@ -318,7 +318,7 @@ public class Analyser extends YaplBaseListener {
     final Information rhs = informationStack.pop();
     final Information lhs = informationStack.pop();
 
-    if (!lhs.is(CompilerError.class) && !rhs.is(CompilerError.class) && !(lhs.as(Variable.class).dataType.equals(YaplConstants.INT) && rhs.as(Variable.class).dataType.equals(YaplConstants.INT))) {
+    if (!lhs.is(CompilerError.class) && !rhs.is(CompilerError.class) && !(lhs.as(Variable.class).dataType.equals(OhplConstants.INT) && rhs.as(Variable.class).dataType.equals(OhplConstants.INT))) {
       final CompilerError error = CompilerError.IllegalOp2Type(ctx.op.getText(), ctx, ctx.op);
       Compiler.errors.add(error);
       informationStack.push(error);
@@ -336,7 +336,7 @@ public class Analyser extends YaplBaseListener {
       if (!expr.is(CompilerError.class)) symboltable.add(expr.as(Symbol.class));
     }
     else {
-      informationStack.push(new Expression(ctx, YaplConstants.INT));
+      informationStack.push(new Expression(ctx, OhplConstants.INT));
     }
 
     afterExpression(ctx);
@@ -347,7 +347,7 @@ public class Analyser extends YaplBaseListener {
     final Information rhs = informationStack.pop();
     final Information lhs = informationStack.pop();
 
-    if (!lhs.is(CompilerError.class) && !rhs.is(CompilerError.class) && !(lhs.as(Variable.class).dataType.equals(YaplConstants.INT) && rhs.as(Variable.class).dataType.equals(YaplConstants.INT))) {
+    if (!lhs.is(CompilerError.class) && !rhs.is(CompilerError.class) && !(lhs.as(Variable.class).dataType.equals(OhplConstants.INT) && rhs.as(Variable.class).dataType.equals(OhplConstants.INT))) {
       final CompilerError error = CompilerError.IllegalRelOpType(ctx.op.getText(), ctx, ctx.op);
       Compiler.errors.add(error);
       informationStack.push(error);
@@ -365,7 +365,7 @@ public class Analyser extends YaplBaseListener {
       if (!expr.is(CompilerError.class)) symboltable.add(expr.as(Symbol.class));
     }
     else {
-      informationStack.push(new Expression(ctx, YaplConstants.BOOL) );
+      informationStack.push(new Expression(ctx, OhplConstants.BOOL) );
     }
 
     afterExpression(ctx);
@@ -394,7 +394,7 @@ public class Analyser extends YaplBaseListener {
       if (!expr.is(CompilerError.class)) symboltable.add(expr.as(Symbol.class));
     }
     else {
-      informationStack.push(new Expression(ctx, YaplConstants.BOOL) );
+      informationStack.push(new Expression(ctx, OhplConstants.BOOL) );
     }
 
     afterExpression(ctx);
@@ -405,7 +405,7 @@ public class Analyser extends YaplBaseListener {
     final Information rhs = informationStack.pop();
     final Information lhs = informationStack.pop();
 
-    if (!lhs.is(CompilerError.class) && !rhs.is(CompilerError.class) && !(lhs.as(Variable.class).dataType.equals(YaplConstants.BOOL) && rhs.as(Variable.class).dataType.equals(YaplConstants.BOOL))) {
+    if (!lhs.is(CompilerError.class) && !rhs.is(CompilerError.class) && !(lhs.as(Variable.class).dataType.equals(OhplConstants.BOOL) && rhs.as(Variable.class).dataType.equals(OhplConstants.BOOL))) {
       final CompilerError error = CompilerError.IllegalOp2Type(ctx.op.getText(), ctx, ctx.op);
       Compiler.errors.add(error);
       informationStack.push(error);
@@ -423,7 +423,7 @@ public class Analyser extends YaplBaseListener {
       if (!expr.is(CompilerError.class)) symboltable.add(expr.as(Symbol.class));
     }
     else {
-      informationStack.push(new Expression(ctx, YaplConstants.BOOL) );
+      informationStack.push(new Expression(ctx, OhplConstants.BOOL) );
     }
 
     afterExpression(ctx);
@@ -437,7 +437,7 @@ public class Analyser extends YaplBaseListener {
     for (int i = 0; i < ctx.expression().size(); i++) {
       final Information expr = informationStack.pop();
 
-      if (!expr.is(CompilerError.class) && !expr.as(Variable.class).dataType.equals(YaplConstants.INT)) {
+      if (!expr.is(CompilerError.class) && !expr.as(Variable.class).dataType.equals(OhplConstants.INT)) {
         error = CompilerError.BadArraySelector(ctx.expression(ctx.expression().size() - 1 - i), ctx.expression(ctx.expression().size() - 1 - i).start);
         Compiler.errors.add(error);
       }
@@ -465,7 +465,7 @@ public class Analyser extends YaplBaseListener {
       informationStack.push(error);
     }
 
-    informationStack.push( new Expression(ctx, YaplConstants.INT) );
+    informationStack.push( new Expression(ctx, OhplConstants.INT) );
   }
 
   @Override
@@ -523,7 +523,7 @@ public class Analyser extends YaplBaseListener {
       idx++;
     }
 
-    if (fn.returnType.equals(YaplConstants.VOID) && ctx.getParent() instanceof PrimaryExprContext) {
+    if (fn.returnType.equals(OhplConstants.VOID) && ctx.getParent() instanceof PrimaryExprContext) {
       error = CompilerError.ProcNotFuncExpr(fnName, ctx, ctx.Id().getSymbol());
       Compiler.errors.add(error);
     }
@@ -535,7 +535,7 @@ public class Analyser extends YaplBaseListener {
     if (ctx.getParent() instanceof PrimaryExprContext) {
       if (error != null) informationStack.push(error);
       else informationStack.push(
-        (fn.returnType.equals(YaplConstants.UNDEFINED))
+        (fn.returnType.equals(OhplConstants.UNDEFINED))
         ? CompilerError.Internal("The Datatype of '" + fn.name + "' was erroneous on declaration, ignore further datatype errors!")
         : new Expression(ctx, fn.returnType)
       );
@@ -573,7 +573,7 @@ public class Analyser extends YaplBaseListener {
       informationStack.push(new Expression(ctx, ctx.getText()));
     }
     else if (ctx.type() == null) {
-      informationStack.push(new Expression(ctx, YaplConstants.VOID));
+      informationStack.push(new Expression(ctx, OhplConstants.VOID));
     }
   }
 
@@ -608,14 +608,14 @@ public class Analyser extends YaplBaseListener {
   public void exitLiteral(LiteralContext ctx) {
     informationStack.push(
       (ctx.Boolean() != null)
-      ? new ConstantExpression(ctx, YaplConstants.BOOL, ctx.Boolean().getText())
-      : new ConstantExpression(ctx, YaplConstants.INT, ctx.Number().getText())
+      ? new ConstantExpression(ctx, OhplConstants.BOOL, ctx.Boolean().getText())
+      : new ConstantExpression(ctx, OhplConstants.INT, ctx.Number().getText())
     );
   }
 
   @Override
   public void visitTerminal(TerminalNode node) {
-    final boolean isId = (node.getSymbol().getType() == YaplParser.Id);
+    final boolean isId = (node.getSymbol().getType() == OhplParser.Id);
     if (isId && (node.getParent() instanceof SelectorContext || node.getParent() instanceof FullIdentifierContext)) {
       beforeSelector(node.getParent());
     }
@@ -646,7 +646,7 @@ public class Analyser extends YaplBaseListener {
         this.isPure = false;
 
       informationStack.push(
-        (symboltable.get(name).as(Variable.class).dataType.equals(YaplConstants.UNDEFINED))
+        (symboltable.get(name).as(Variable.class).dataType.equals(OhplConstants.UNDEFINED))
         ? CompilerError.Internal("The Datatype of '" + name + "' was erroneous on declaration, ignore further datatype errors!")
         : symboltable.get(name)
       );
@@ -690,7 +690,7 @@ public class Analyser extends YaplBaseListener {
           return;
         }
 
-        if (!expr.is(CompilerError.class) && !expr.as(Variable.class).dataType.equals(YaplConstants.INT)) {
+        if (!expr.is(CompilerError.class) && !expr.as(Variable.class).dataType.equals(OhplConstants.INT)) {
           final CompilerError error = CompilerError.BadArraySelector(sctx.expression(), sctx.expression().start);
           Compiler.errors.add(error);
           informationStack.pop();
@@ -718,81 +718,81 @@ public class Analyser extends YaplBaseListener {
       case "+":
         ilhs = Integer.parseInt(lhs.value);
         irhs = Integer.parseInt(rhs.value);
-        return new ConstantExpression(context, YaplConstants.INT, "" + (ilhs + irhs));
+        return new ConstantExpression(context, OhplConstants.INT, "" + (ilhs + irhs));
 
       case "-":
         ilhs = Integer.parseInt(lhs.value);
         irhs = Integer.parseInt(rhs.value);
-        return new ConstantExpression(context, YaplConstants.INT, "" + (ilhs - irhs));
+        return new ConstantExpression(context, OhplConstants.INT, "" + (ilhs - irhs));
 
       case "*":
         ilhs = Integer.parseInt(lhs.value);
         irhs = Integer.parseInt(rhs.value);
-        return new ConstantExpression(context, YaplConstants.INT, "" + (ilhs * irhs));
+        return new ConstantExpression(context, OhplConstants.INT, "" + (ilhs * irhs));
 
       case "/":
         ilhs = Integer.parseInt(lhs.value);
         irhs = Integer.parseInt(rhs.value);
-        return new ConstantExpression(context, YaplConstants.INT, "" + (ilhs / irhs));
+        return new ConstantExpression(context, OhplConstants.INT, "" + (ilhs / irhs));
 
       case "%":
         ilhs = Integer.parseInt(lhs.value);
         irhs = Integer.parseInt(rhs.value);
-        return new ConstantExpression(context, YaplConstants.INT, "" + (ilhs % irhs));
+        return new ConstantExpression(context, OhplConstants.INT, "" + (ilhs % irhs));
 
       case "==":
-        if (lhs.dataType.equals(YaplConstants.INT)) {
+        if (lhs.dataType.equals(OhplConstants.INT)) {
           ilhs = Integer.parseInt(lhs.value);
           irhs = Integer.parseInt(rhs.value);
-          return new ConstantExpression(context, YaplConstants.BOOL, (ilhs == irhs) ? YaplConstants.TRUE : YaplConstants.FALSE);
+          return new ConstantExpression(context, OhplConstants.BOOL, (ilhs == irhs) ? OhplConstants.TRUE : OhplConstants.FALSE);
         }
         else {
-          blhs = lhs.value.equals(YaplConstants.TRUE);
-          brhs = rhs.value.equals(YaplConstants.TRUE);
-          return new ConstantExpression(context, YaplConstants.BOOL, (blhs == brhs) ? YaplConstants.TRUE : YaplConstants.FALSE);
+          blhs = lhs.value.equals(OhplConstants.TRUE);
+          brhs = rhs.value.equals(OhplConstants.TRUE);
+          return new ConstantExpression(context, OhplConstants.BOOL, (blhs == brhs) ? OhplConstants.TRUE : OhplConstants.FALSE);
         }
 
       case "!=":
-        if (lhs.dataType.equals(YaplConstants.INT)) {
+        if (lhs.dataType.equals(OhplConstants.INT)) {
           ilhs = Integer.parseInt(lhs.value);
           irhs = Integer.parseInt(rhs.value);
-          return new ConstantExpression(context, YaplConstants.BOOL, (ilhs != irhs) ? YaplConstants.TRUE : YaplConstants.FALSE);
+          return new ConstantExpression(context, OhplConstants.BOOL, (ilhs != irhs) ? OhplConstants.TRUE : OhplConstants.FALSE);
         }
         else {
-          blhs = lhs.value.equals(YaplConstants.TRUE);
-          brhs = rhs.value.equals(YaplConstants.TRUE);
-          return new ConstantExpression(context, YaplConstants.BOOL, (blhs != brhs) ? YaplConstants.TRUE : YaplConstants.FALSE);
+          blhs = lhs.value.equals(OhplConstants.TRUE);
+          brhs = rhs.value.equals(OhplConstants.TRUE);
+          return new ConstantExpression(context, OhplConstants.BOOL, (blhs != brhs) ? OhplConstants.TRUE : OhplConstants.FALSE);
         }
 
       case "<":
         ilhs = Integer.parseInt(lhs.value);
         irhs = Integer.parseInt(rhs.value);
-        return new ConstantExpression(context, YaplConstants.BOOL, (ilhs < irhs) ? YaplConstants.TRUE : YaplConstants.FALSE);
+        return new ConstantExpression(context, OhplConstants.BOOL, (ilhs < irhs) ? OhplConstants.TRUE : OhplConstants.FALSE);
 
       case ">":
         ilhs = Integer.parseInt(lhs.value);
         irhs = Integer.parseInt(rhs.value);
-        return new ConstantExpression(context, YaplConstants.BOOL, (ilhs > irhs) ? YaplConstants.TRUE : YaplConstants.FALSE);
+        return new ConstantExpression(context, OhplConstants.BOOL, (ilhs > irhs) ? OhplConstants.TRUE : OhplConstants.FALSE);
 
       case "<=":
         ilhs = Integer.parseInt(lhs.value);
         irhs = Integer.parseInt(rhs.value);
-        return new ConstantExpression(context, YaplConstants.BOOL, (ilhs <= irhs) ? YaplConstants.TRUE : YaplConstants.FALSE);
+        return new ConstantExpression(context, OhplConstants.BOOL, (ilhs <= irhs) ? OhplConstants.TRUE : OhplConstants.FALSE);
 
       case ">=":
         ilhs = Integer.parseInt(lhs.value);
         irhs = Integer.parseInt(rhs.value);
-        return new ConstantExpression(context, YaplConstants.BOOL, (ilhs >= irhs) ? YaplConstants.TRUE : YaplConstants.FALSE);
+        return new ConstantExpression(context, OhplConstants.BOOL, (ilhs >= irhs) ? OhplConstants.TRUE : OhplConstants.FALSE);
 
       case "And":
-        blhs = lhs.value.equals(YaplConstants.TRUE);
-        brhs = rhs.value.equals(YaplConstants.TRUE);
-        return new ConstantExpression(context, YaplConstants.BOOL, (blhs && brhs) ? YaplConstants.TRUE : YaplConstants.FALSE);
+        blhs = lhs.value.equals(OhplConstants.TRUE);
+        brhs = rhs.value.equals(OhplConstants.TRUE);
+        return new ConstantExpression(context, OhplConstants.BOOL, (blhs && brhs) ? OhplConstants.TRUE : OhplConstants.FALSE);
 
       case "Or":
-        blhs = lhs.value.equals(YaplConstants.TRUE);
-        brhs = rhs.value.equals(YaplConstants.TRUE);
-        return new ConstantExpression(context, YaplConstants.BOOL, (blhs || brhs) ? YaplConstants.TRUE : YaplConstants.FALSE);
+        blhs = lhs.value.equals(OhplConstants.TRUE);
+        brhs = rhs.value.equals(OhplConstants.TRUE);
+        return new ConstantExpression(context, OhplConstants.BOOL, (blhs || brhs) ? OhplConstants.TRUE : OhplConstants.FALSE);
 
       default:
         CompilerError error = CompilerError.Internal("Unknown op '" + op.getText() + "' for constant folding!", context, op);

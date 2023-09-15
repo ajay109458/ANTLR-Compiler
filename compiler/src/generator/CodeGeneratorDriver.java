@@ -1,16 +1,16 @@
 package generator;
 
 import analyser.SymbolTable;
-import information.YaplConstants;
+import information.OhplConstants;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
-import parser.YaplBaseVisitor;
-import parser.YaplParser.*;
+import parser.OhplBaseVisitor;
+import parser.OhplParser.*;
 import information.*;
 
 import java.io.IOException;
 
-public class CodeGeneratorDriver extends YaplBaseVisitor<Symbol> {
+public class CodeGeneratorDriver extends OhplBaseVisitor<Symbol> {
 
   protected SymbolTable symboltable = null;
   protected CodeGenerator backend = null;
@@ -67,7 +67,7 @@ public class CodeGeneratorDriver extends YaplBaseVisitor<Symbol> {
     final String value = stringLiteral.substring(1, stringLiteral.length() - 1);
 
     backend
-      .loadConstant( new ConstantExpression(ctx, YaplConstants.STRING, value) )
+      .loadConstant( new ConstantExpression(ctx, OhplConstants.STRING, value) )
       .write();
 
     return null;
@@ -89,8 +89,8 @@ public class CodeGeneratorDriver extends YaplBaseVisitor<Symbol> {
   @Override
   public Symbol visitLiteral(LiteralContext ctx) {
     final ConstantExpression sym = (ctx.Boolean() != null)
-      ? new ConstantExpression(ctx, YaplConstants.BOOL, ctx.Boolean().getText())
-      : new ConstantExpression(ctx, YaplConstants.INT,  ctx.Number().getText());
+      ? new ConstantExpression(ctx, OhplConstants.BOOL, ctx.Boolean().getText())
+      : new ConstantExpression(ctx, OhplConstants.INT,  ctx.Number().getText());
 
     if (!(ctx.getParent() instanceof ConstDeclarationContext))
       backend.loadConstant(sym);

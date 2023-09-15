@@ -39,7 +39,7 @@ public class Variable extends Symbol {
   }
 
   public boolean isPrimitive() {
-    return (dataType.equals(YaplConstants.INT) || dataType.equals(YaplConstants.BOOL));
+    return (dataType.equals(OhplConstants.INT) || dataType.equals(OhplConstants.BOOL));
   }
 
   public boolean isArray() {

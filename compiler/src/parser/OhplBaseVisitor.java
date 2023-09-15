@@ -1,9 +1,9 @@
-// Generated from C:/coderepos/compiler/ANTLR-Compiler/compiler/src/parser/Yapl.g4 by ANTLR 4.13.1
+// Generated from C:/coderepos/compiler/ANTLR-Compiler/compiler/src/parser/Ohpl.g4 by ANTLR 4.13.1
 package parser;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
- * This class provides an empty implementation of {@link YaplVisitor},
+ * This class provides an empty implementation of {@link OhplVisitor},
  * which can be extended to create a visitor which only needs to handle a subset
  * of the available methods.
  *
@@ -11,215 +11,215 @@ import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
  * operations with no return type.
  */
 @SuppressWarnings("CheckReturnValue")
-public class YaplBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements YaplVisitor<T> {
+public class OhplBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements OhplVisitor<T> {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitProgram(YaplParser.ProgramContext ctx) { return visitChildren(ctx); }
+	@Override public T visitProgram(OhplParser.ProgramContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitDeclarationBlock(YaplParser.DeclarationBlockContext ctx) { return visitChildren(ctx); }
+	@Override public T visitDeclarationBlock(OhplParser.DeclarationBlockContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitConstDeclaration(YaplParser.ConstDeclarationContext ctx) { return visitChildren(ctx); }
+	@Override public T visitConstDeclaration(OhplParser.ConstDeclarationContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVarDeclaration(YaplParser.VarDeclarationContext ctx) { return visitChildren(ctx); }
+	@Override public T visitVarDeclaration(OhplParser.VarDeclarationContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitRecordDeclaration(YaplParser.RecordDeclarationContext ctx) { return visitChildren(ctx); }
+	@Override public T visitRecordDeclaration(OhplParser.RecordDeclarationContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitProcedure(YaplParser.ProcedureContext ctx) { return visitChildren(ctx); }
+	@Override public T visitProcedure(OhplParser.ProcedureContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitParam(YaplParser.ParamContext ctx) { return visitChildren(ctx); }
+	@Override public T visitParam(OhplParser.ParamContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitProcedureCall(YaplParser.ProcedureCallContext ctx) { return visitChildren(ctx); }
+	@Override public T visitProcedureCall(OhplParser.ProcedureCallContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitReturnStatement(YaplParser.ReturnStatementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitReturnStatement(OhplParser.ReturnStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitBlock(YaplParser.BlockContext ctx) { return visitChildren(ctx); }
+	@Override public T visitBlock(OhplParser.BlockContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitStatement(YaplParser.StatementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitStatement(OhplParser.StatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitStatementList(YaplParser.StatementListContext ctx) { return visitChildren(ctx); }
+	@Override public T visitStatementList(OhplParser.StatementListContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAssignment(YaplParser.AssignmentContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAssignment(OhplParser.AssignmentContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitIfStatement(YaplParser.IfStatementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitIfStatement(OhplParser.IfStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitWhileStatement(YaplParser.WhileStatementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitWhileStatement(OhplParser.WhileStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitWriteStatement(YaplParser.WriteStatementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitWriteStatement(OhplParser.WriteStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitArithmeticExpr(YaplParser.ArithmeticExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitArithmeticExpr(OhplParser.ArithmeticExprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitComparison(YaplParser.ComparisonContext ctx) { return visitChildren(ctx); }
+	@Override public T visitComparison(OhplParser.ComparisonContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCreationExpr(YaplParser.CreationExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitCreationExpr(OhplParser.CreationExprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitUnaryExpr(YaplParser.UnaryExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitUnaryExpr(OhplParser.UnaryExprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitEqualityComparison(YaplParser.EqualityComparisonContext ctx) { return visitChildren(ctx); }
+	@Override public T visitEqualityComparison(OhplParser.EqualityComparisonContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitBooleanExpr(YaplParser.BooleanExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitBooleanExpr(OhplParser.BooleanExprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPrimaryExpr(YaplParser.PrimaryExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPrimaryExpr(OhplParser.PrimaryExprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitArrayLength(YaplParser.ArrayLengthContext ctx) { return visitChildren(ctx); }
+	@Override public T visitArrayLength(OhplParser.ArrayLengthContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFullIdentifier(YaplParser.FullIdentifierContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFullIdentifier(OhplParser.FullIdentifierContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitSelector(YaplParser.SelectorContext ctx) { return visitChildren(ctx); }
+	@Override public T visitSelector(OhplParser.SelectorContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitReturnType(YaplParser.ReturnTypeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitReturnType(OhplParser.ReturnTypeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitType(YaplParser.TypeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitType(OhplParser.TypeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitBaseType(YaplParser.BaseTypeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitBaseType(OhplParser.BaseTypeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitLiteral(YaplParser.LiteralContext ctx) { return visitChildren(ctx); }
+	@Override public T visitLiteral(OhplParser.LiteralContext ctx) { return visitChildren(ctx); }
 }

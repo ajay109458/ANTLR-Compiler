@@ -3,11 +3,11 @@ package analyser;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-import parser.YaplBaseVisitor;
-import parser.YaplParser.*;
+import parser.OhplBaseVisitor;
+import parser.OhplParser.*;
 import information.*;
 
-public class SymbolDumper extends YaplBaseVisitor<Void> {
+public class SymbolDumper extends OhplBaseVisitor<Void> {
 
   protected SymbolTable symboltable = null;
   protected String indent = "";

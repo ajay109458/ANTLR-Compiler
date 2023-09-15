@@ -1,6 +1,6 @@
 package generator;
 
-import information.YaplConstants;
+import information.OhplConstants;
 import jvm_class_generator.specs.JvmClass;
 import jvm_class_generator.specs.attributes.Code;
 import jvm_class_generator.specs.attributes.InnerClasses;
@@ -245,13 +245,13 @@ public class JvmCodeGenerator implements CodeGenerator {
   }
 
   public JvmCodeGenerator loadConstant(Constant sym) {
-    if (sym.dataType.equals(YaplConstants.STRING)) {
+    if (sym.dataType.equals(OhplConstants.STRING)) {
       code.ldc( consts.addString(sym.value) );
       return this;
     }
 
-    if (sym.dataType.equals(YaplConstants.BOOL)) {
-      if (sym.value.equals(YaplConstants.TRUE)) code.iconst_1();
+    if (sym.dataType.equals(OhplConstants.BOOL)) {
+      if (sym.value.equals(OhplConstants.TRUE)) code.iconst_1();
       else code.iconst_0();
 
       if (boolOperators.size() > 0) connectBoolOperand();
@@ -312,8 +312,8 @@ public class JvmCodeGenerator implements CodeGenerator {
 
   public JvmCodeGenerator store(Variable sym) {
     if (sym.name.endsWith("[]")) {
-      if (sym.dataType.equals(YaplConstants.BOOL)) code.bastore();
-      else if (sym.dataType.equals(YaplConstants.INT)) code.iastore();
+      if (sym.dataType.equals(OhplConstants.BOOL)) code.bastore();
+      else if (sym.dataType.equals(OhplConstants.INT)) code.iastore();
       else code.aastore();
     }
     else if (sym.name.contains(".")) {
@@ -349,8 +349,8 @@ public class JvmCodeGenerator implements CodeGenerator {
 
   public JvmCodeGenerator load(Variable sym) {
     if (sym.name.endsWith("[]")) {
-      if (sym.dataType.equals(YaplConstants.BOOL)) code.baload();
-      else if (sym.dataType.equals(YaplConstants.INT)) code.iaload();
+      if (sym.dataType.equals(OhplConstants.BOOL)) code.baload();
+      else if (sym.dataType.equals(OhplConstants.INT)) code.iaload();
       else code.aaload();
     }
     else if (sym.name.contains(".")) {
@@ -381,7 +381,7 @@ public class JvmCodeGenerator implements CodeGenerator {
       }
     }
 
-    if (sym.dataType.equals(YaplConstants.BOOL) && boolOperators.size() > 0) connectBoolOperand();
+    if (sym.dataType.equals(OhplConstants.BOOL) && boolOperators.size() > 0) connectBoolOperand();
     return this;
   }
 
@@ -405,7 +405,7 @@ public class JvmCodeGenerator implements CodeGenerator {
     final int methodRef = consts.addMethodref(className, fn.name, getMethodDescriptor(fn));
     code.invokeStatic(methodRef);
 
-    if (fn.returnType.equals(YaplConstants.BOOL) && boolOperators.size() > 0) connectBoolOperand();
+    if (fn.returnType.equals(OhplConstants.BOOL) && boolOperators.size() > 0) connectBoolOperand();
     return this;
   }
 
@@ -454,7 +454,7 @@ public class JvmCodeGenerator implements CodeGenerator {
         boolOperandsCount.push(0);
         labels.push(new HashMap<>());
         labels.peek().put(START, nextLabel());
-        labels.peek().put(YaplConstants.TRUE, nextLabel());
+        labels.peek().put(OhplConstants.TRUE, nextLabel());
         labels.peek().put(END, nextLabel());
         code.addLabel(labels.peek().get(START));
       }
@@ -464,7 +464,7 @@ public class JvmCodeGenerator implements CodeGenerator {
         boolOperandsCount.push(0);
         labels.push(new HashMap<>());
         labels.peek().put(START, nextLabel());
-        labels.peek().put(YaplConstants.FALSE, nextLabel());
+        labels.peek().put(OhplConstants.FALSE, nextLabel());
         labels.peek().put(END, nextLabel());
         code.addLabel(labels.peek().get(START));
       }
@@ -572,8 +572,8 @@ public class JvmCodeGenerator implements CodeGenerator {
 
       code.multianewArray( consts.addClass(descriptor), dimensions );
     }
-    else if (baseType.equals(YaplConstants.INT) || baseType.equals(YaplConstants.BOOL)) {
-      int arrType = baseType.equals(YaplConstants.INT) ? ArrayType.INT : ArrayType.BOOLEAN;
+    else if (baseType.equals(OhplConstants.INT) || baseType.equals(OhplConstants.BOOL)) {
+      int arrType = baseType.equals(OhplConstants.INT) ? ArrayType.INT : ArrayType.BOOLEAN;
       code.newArray(arrType);
     }
     else {
@@ -647,15 +647,15 @@ public class JvmCodeGenerator implements CodeGenerator {
     int operandNr = boolOperandsCount.pop() + 1;
     boolOperandsCount.push(operandNr);
 
-    if (boolOperators.peek().equals(OR)) code.ifne(labels.peek().get(YaplConstants.TRUE));
-    else code.ifeq(labels.peek().get(YaplConstants.FALSE));
+    if (boolOperators.peek().equals(OR)) code.ifne(labels.peek().get(OhplConstants.TRUE));
+    else code.ifeq(labels.peek().get(OhplConstants.FALSE));
 
     if (operandNr == 2) {
       if (boolOperators.peek().equals(OR)) {
         code
           .iconst_0()
           .gotoLabel(labels.peek().get(END))
-          .addLabel(labels.peek().get(YaplConstants.TRUE), labels.peek().get(START))
+          .addLabel(labels.peek().get(OhplConstants.TRUE), labels.peek().get(START))
           .iconst_1()
           .addLabel(labels.peek().get(END));
       }
@@ -663,7 +663,7 @@ public class JvmCodeGenerator implements CodeGenerator {
         code
           .iconst_1()
           .gotoLabel(labels.peek().get(END))
-          .addLabel(labels.peek().get(YaplConstants.FALSE), labels.peek().get(START))
+          .addLabel(labels.peek().get(OhplConstants.FALSE), labels.peek().get(START))
           .iconst_0()
           .addLabel(labels.peek().get(END));
       }
@@ -707,10 +707,10 @@ public class JvmCodeGenerator implements CodeGenerator {
 
   protected String getBaseTypeDescriptor(String type) {
     return switch (type) {
-      case YaplConstants.INT -> Descriptor.INT;
-      case YaplConstants.BOOL -> Descriptor.BOOLEAN;
-      case YaplConstants.STRING -> Descriptor.STRING;
-      case YaplConstants.VOID -> Descriptor.VOID;
+      case OhplConstants.INT -> Descriptor.INT;
+      case OhplConstants.BOOL -> Descriptor.BOOLEAN;
+      case OhplConstants.STRING -> Descriptor.STRING;
+      case OhplConstants.VOID -> Descriptor.VOID;
       default -> Descriptor.REFERENCE(getFullRecordName(type));
     };
   }

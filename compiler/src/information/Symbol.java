@@ -6,8 +6,8 @@ package information;
  */
 public abstract class Symbol extends Information {
 
-  public String name = YaplConstants.UNDEFINED;
-  public String symbolType = YaplConstants.UNDEFINED;
+  public String name = OhplConstants.UNDEFINED;
+  public String symbolType = OhplConstants.UNDEFINED;
 
   public Symbol(String name, String symbolType) {
     this.name = name;

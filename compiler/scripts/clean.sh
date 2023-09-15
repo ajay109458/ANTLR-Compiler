@@ -4,6 +4,6 @@ bin="./bin"
 parserDir="./src/parser"
 
 rm -rf $bin
-rm -rf $parserDir/Yapl*.java
+rm -rf $parserDir/Ohpl*.java
 
 echo Workspace cleaned successfully!

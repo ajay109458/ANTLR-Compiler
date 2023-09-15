@@ -2,9 +2,9 @@ package generator;
 
 import analyser.SymbolTable;
 import compiler.Compiler;
-import information.YaplConstants;
+import information.OhplConstants;
 import information.CompilerContext;
-import parser.YaplParser.*;
+import parser.OhplParser.*;
 import information.*;
 
 import java.util.Arrays;
@@ -285,7 +285,7 @@ public class ProfilerDriver extends CodeGeneratorDriver {
 
   public Symbol visitArrayLength(ArrayLengthContext ctx, boolean watch) {
     Symbol result = super.visitArrayLength(ctx);
-    if (watch) backend.dumpTopOfStack(symboltable, new Variable(YaplConstants.UNDEFINED, "int", true));
+    if (watch) backend.dumpTopOfStack(symboltable, new Variable(OhplConstants.UNDEFINED, "int", true));
     return result;
   }
 

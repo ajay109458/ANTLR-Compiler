@@ -1,6 +1,6 @@
 package information;
 
-public class YaplConstants {
+public class OhplConstants {
   // types
   public static final String INT = "int";
   public static final String BOOL = "bool";

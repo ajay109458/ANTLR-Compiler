@@ -9,7 +9,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.util.BitSet;
 
-public class ErrorListener extends YaplBaseListener implements ANTLRErrorListener {
+public class ErrorListener extends OhplBaseListener implements ANTLRErrorListener {
 
   public ParseTree root = null;
 

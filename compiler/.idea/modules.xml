@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/YaplCompiler.iml" filepath="$PROJECT_DIR$/YaplCompiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OHPLCompiler.iml" filepath="$PROJECT_DIR$/OHPLCompiler.iml" />
     </modules>
   </component>
 </project>

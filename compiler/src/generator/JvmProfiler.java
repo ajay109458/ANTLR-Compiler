@@ -1,7 +1,7 @@
 package generator;
 
 import analyser.SymbolTable;
-import information.YaplConstants;
+import information.OhplConstants;
 import jvm_class_generator.specs.helpers.Descriptor;
 import stdlib.StandardLibrary;
 import information.*;
@@ -17,7 +17,7 @@ public class JvmProfiler extends JvmCodeGenerator implements Profiler {
   }
 
   public JvmProfiler vardump(SymbolTable symboltable, int line) {
-    loadConstant(new ConstantExpression(null, YaplConstants.STRING, "[PROFILER, line " + line + "] ================================================")).write();
+    loadConstant(new ConstantExpression(null, OhplConstants.STRING, "[PROFILER, line " + line + "] ================================================")).write();
     callFunction(symboltable.get("writeln").as(Procedure.class));
     vardump(symboltable, symboltable.currScope);
     return this;
@@ -34,11 +34,11 @@ public class JvmProfiler extends JvmCodeGenerator implements Profiler {
   }
 
   public JvmProfiler dumpSymbol(SymbolTable symboltable, Variable sym) {
-    loadConstant(new ConstantExpression(null, YaplConstants.STRING, sym.dataType + " ")).write();
-    loadConstant(new ConstantExpression(null, YaplConstants.STRING, sym.name + ": ")).write();
+    loadConstant(new ConstantExpression(null, OhplConstants.STRING, sym.dataType + " ")).write();
+    loadConstant(new ConstantExpression(null, OhplConstants.STRING, sym.name + ": ")).write();
 
     if (sym.is(Constant.class)) {
-      loadConstant( new ConstantExpression(null, YaplConstants.STRING, sym.as(Constant.class).value) ).write();
+      loadConstant( new ConstantExpression(null, OhplConstants.STRING, sym.as(Constant.class).value) ).write();
     }
     else {
       load(sym);
@@ -78,7 +78,7 @@ public class JvmProfiler extends JvmCodeGenerator implements Profiler {
 
   protected int vardump(SymbolTable symboltable, SymbolTable.Scope scope) {
     if (scope.parent.parent == null) {
-      loadConstant(new ConstantExpression(null, YaplConstants.STRING, "Globals:")).write();
+      loadConstant(new ConstantExpression(null, OhplConstants.STRING, "Globals:")).write();
       callFunction(symboltable.get("writeln").as(Procedure.class));
 
       dumpScope(symboltable, scope);
@@ -90,7 +90,7 @@ public class JvmProfiler extends JvmCodeGenerator implements Profiler {
 
     if (shouldVardump < 2) {
       if (!program.hasMethod("main", Descriptor.MAIN) && shouldVardump == 0) {
-        loadConstant(new ConstantExpression(null, YaplConstants.STRING, "Params:")).write();
+        loadConstant(new ConstantExpression(null, OhplConstants.STRING, "Params:")).write();
         callFunction(symboltable.get("writeln").as(Procedure.class));
 
         dumpScope(symboltable, scope);
@@ -98,7 +98,7 @@ public class JvmProfiler extends JvmCodeGenerator implements Profiler {
         return 1;
       }
       else {
-        loadConstant(new ConstantExpression(null, YaplConstants.STRING, "Locals:")).write();
+        loadConstant(new ConstantExpression(null, OhplConstants.STRING, "Locals:")).write();
         callFunction(symboltable.get("writeln").as(Procedure.class));
 
         dumpScope(symboltable, scope);
@@ -122,10 +122,10 @@ public class JvmProfiler extends JvmCodeGenerator implements Profiler {
     if (sym.selectElement().isArray()) {
       toString = consts.addMethodref(Arrays, "deepToString", Descriptor.METHOD(Descriptor.STRING, Descriptor.ARRAY(Descriptor.OBJECT)));
     }
-    else if (sym.selectElement().dataType.equals(YaplConstants.INT)) {
+    else if (sym.selectElement().dataType.equals(OhplConstants.INT)) {
       toString = consts.addMethodref(Arrays, "toString", Descriptor.METHOD(Descriptor.STRING, Descriptor.ARRAY(Descriptor.INT)));
     }
-    else if (sym.selectElement().dataType.equals(YaplConstants.BOOL)) {
+    else if (sym.selectElement().dataType.equals(OhplConstants.BOOL)) {
       toString = consts.addMethodref(Arrays, "toString", Descriptor.METHOD(Descriptor.STRING, Descriptor.ARRAY(Descriptor.BOOLEAN)));
     }
     else {
